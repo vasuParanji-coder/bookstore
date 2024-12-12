@@ -1,2 +1,4 @@
-# bookstore
-CS348Final
+# Bookstore Application
+CS348 Final Project
+
+
