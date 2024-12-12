@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+</head>
+<body>
+<h1>Reports</h1>
+
+<!-- Form for date-based report filtering -->
+<form action="/generate_report" method="get">
+    <label for="start_date">Start Date:</label>
+    <input type="date" id="start_date" name="start_date">
+
+    <label for="end_date">End Date:</label>
+    <input type="date" id="end_date" name="end_date">
+
+    <button type="submit">Generate Report</button>
+</form>
+
+<hr>
+
+<!-- Link to member info lookup -->
+<h2>Look Up Member Information</h2>
+<p>To find information about a specific member, please visit the <a href="/member_info">Member Info Lookup</a> page.</p>
+
+<a href="/">Back to Home</a>
+</body>
+</html>

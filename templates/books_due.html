@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Due</title>
+</head>
+<body>
+<h1>Books Due Report</h1>
+
+<form method="POST">
+    <label for="due_date">Enter Due Date (YYYY-MM-DD):</label>
+    <input type="date" id="due_date" name="due_date" required>
+    <button type="submit">Get Report</button>
+</form>
+
+{% if date_not_found %}
+<p>No books found for the specified date.</p>
+{% elif books_due %}
+<h2>Books Due on {{ request.form.get('due_date') }}</h2>
+<table>
+    <tr>
+        <th>Member ID</th>
+        <th>Member Name</th>
+        <th>Title</th>
+    </tr>
+    {% for book in books_due %}
+    <tr>
+        <td>{{ book[0] }}</td>
+        <td>{{ book[1] }}</td>
+        <td>{{ book[2] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+<a href="/">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Information Lookup</title>
+</head>
+<body>
+<h1>Member Information Lookup</h1>
+
+<!-- Form for looking up member information by UID -->
+<form action="/member_info" method="get">
+    <label for="uid">Enter Member UID:</label>
+    <input type="number" id="uid" name="uid" required>
+    <button type="submit">Look Up Member</button>
+</form>
+
+{% if member_info %}
+<h2>Member Information</h2>
+<p><strong>Name:</strong> {{ member_info.name }}</p>
+<p><strong>Rental Count:</strong> {{ member_info.rental_count }}</p>
+<p><strong>Rented Books:</strong> {{ member_info.rented_books or 'None' }}</p>
+<p><strong>Purchase Count:</strong> {{ member_info.purchase_count }}</p>
+{% elif member_not_found %}
+<p>No member found with that UID.</p>
+{% endif %}
+
+<a href="/">Back to Home</a>
+</body>
+</html>
